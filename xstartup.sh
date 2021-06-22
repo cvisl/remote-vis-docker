@@ -3,6 +3,6 @@
 cd /sw/adf
 . ./adfbashrc.sh
 
-vglrun -d :1 adfjobs &
+vglrun -d ${DISPLAY} adfjobs &
 
 exec mate-session
