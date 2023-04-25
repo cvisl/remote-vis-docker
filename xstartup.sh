@@ -1,8 +1,14 @@
 #!/bin/bash
 
-cd /sw/adf
-. ./adfbashrc.sh
+unset SESSION_MANAGER
+unset DBUS_SESSION_BUS_ADDRESS
 
-vglrun -d ${DISPLAY} adfjobs &
+xset -dpms &
+xset s noblank &
+xset s off &
 
-exec mate-session
+dconf load / < /mateconfig
+
+exec mate-session &
+
+. /software-start-up.sh
